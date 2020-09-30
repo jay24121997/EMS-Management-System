@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Employee List</title>
+</head>
+
+<body>
+    <!--nav-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="dashboard.html">Hi, Jay</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="EmployeeList.html">Employees</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="JobsList.html">Jobs</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <div class="input-group">
+                        <input type="text" class="form-control form-control-sm" placeholder="Search.."
+                            aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-primary" type="button" id="button-addon2"><i
+                                class="fa fa-search"></i></button>
+                    </div>
+                </form>
+                <a href="#" class="ml-3 btn btn-warning btn-sm">Log Out</a>
+            </div>
+        </div>
+    </nav>
+    <!--nav-->
+
+    <!-- Main-Content-->
+    <div class="container-fluid">
+        <div class="row mt-3">
+            <div class="col-lg-3 col-md-3">
+                <div class="list-group mb-3">
+                    <div class="list-group-item active">Jobs Data</div>
+                    <a href="#" class="list-group-item " data-toggle="modal" data-target="#addEmployee">Add Job</a>
+                    <a href="JobsList.html" class="list-group-item">View All</a>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9">
+                <table class="table table-striped bg-light small">
+                    <tr class="table-dark">
+                        <th>ID</th>
+                        <th>Job Name</th>
+                        <th>Details</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Web Designer</td>
+                        <td><a href="" class="btn btn-sm btn-info btn-block" data-toggle="modal"
+                                data-target="#details">Details</a></td>
+                        <td><a href="" class="btn btn-sm btn-warning btn-block" data-toggle="modal"
+                                data-target="#editEmployee">Edit</a></td>
+                        <td><a href="" class="btn btn-sm btn-danger btn-block"
+                                onclick="confirm('Are you sure you want to delete \'Web Designer\'?')">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Web Developer</td>
+                        <td><a href="" class="btn btn-sm btn-info btn-block" data-toggle="modal"
+                                data-target="#details">Details</a></td>
+                        <td><a href="" class="btn btn-sm btn-warning btn-block" data-toggle="modal"
+                                data-target="#editEmployee">Edit</a></td>
+                        <td><a href="" class="btn btn-sm btn-danger btn-block"
+                                onclick="confirm('Are you sure you want to delete \'Web Developer\'?')">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Software Developer</td>
+                        <td><a href="" class="btn btn-sm btn-info btn-block" data-toggle="modal"
+                                data-target="#details">Details</a></td>
+                        <td><a href="" class="btn btn-sm btn-warning btn-block" data-toggle="modal"
+                                data-target="#editEmployee">Edit</a></td>
+                        <td><a href="" class="btn btn-sm btn-danger btn-block"
+                                onclick="confirm('Are you sure you want to delete \'Software Developer\'?')">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Software Engineer</td>
+                        <td><a href="" class="btn btn-sm btn-info btn-block" data-toggle="modal"
+                                data-target="#details">Details</a></td>
+                        <td><a href="" class="btn btn-sm btn-warning btn-block" data-toggle="modal"
+                                data-target="#editEmployee">Edit</a></td>
+                        <td><a href="" class="btn btn-sm btn-danger btn-block"
+                                onclick="confirm('Are you sure you want to delete \'Software Engineer\'?')">Delete</a>
+                        </td>
+                    </tr>
+                </table>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Main-Content-->
+
+    <!--Add Job Modal-->
+    <div class="modal fade" id="addEmployee" tabindex="-1" aria-labelledby="addEmployee" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Employee</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-2">
+                            <input type="date" class="form-control form-control-sm" name="date" id="date" required>
+                        </div>
+                        <div class="mb-2">
+                            <select name="designation" id="designation" class="form-control form-control-sm">
+                                <option value="Web Developer">Web Developer</option>
+                                <option value="Web Designer">Web Designer</option>
+                                <option value="Software Developer">Software Developer</option>
+                                <option value="Software Engineer">Software Engineer</option>
+                            </select>
+                        </div>
+                        <div class="mb-2">
+                            <button class="btn btn-success btn-block btn-sm">Add Job</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Add Job Modal-->
+
+    <!--Detail Job Modal-->
+    <div class="modal fade" id="details" tabindex="-1" aria-labelledby="details" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Job Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>ID</th>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <th>Job Added Date</th>
+                        <td>23 July 2005</td>
+                    </tr>
+                    <tr>
+                        <th>Job Name</th>
+                        <td>Software Developer</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--Detail Job Modal-->
+
+    <!--Edit Job Modal-->
+    <div class="modal fade" id="editEmployee" tabindex="-1" aria-labelledby="editEmployee" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Job</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-2">
+                            <input value="23-July-2005" class="form-control form-control-sm" name="date" id="date"
+                                required>
+                        </div>
+                        <div class="mb-2">
+                            <input value="Web Developer" class="form-control form-control-sm" name="designation"
+                                id="designation" required>
+                        </div>
+                        <div class="mb-2">
+                            <button class="btn btn-success btn-block btn-sm">Update Job</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Edit Job Modal-->
+
+    <!-- Optional JavaScript -->
+    <!-- Popper.js first, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
